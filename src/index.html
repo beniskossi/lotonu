@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ff5555">
+    <title>Lotonu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="icons/favicon.ico">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="loader" id="loader">
+        <div class="spinner"></div>
+    </div>
+    <div class="container" id="mainContent">
+        <header class="app-header">
+            <h1 class="logo">LOTONU</h1>
+            <nav class="category-switcher" id="categoryNav"></nav>
+        </header>
+        <nav class="submenu-nav" id="submenuNav"></nav>
+        <main class="main-content" id="dynamicContent"></main>
+        <div class="global-controls">
+            <button class="btn-danger" onclick="app.factoryReset()">Réinitialiser</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
