@@ -1,0 +1,213 @@
+:root {
+    --primary: #0a192f;
+    --secondary: #172a45;
+    --accent: #64ffda;
+    --text: #ccd6f6;
+    --input-bg: #2a4365;
+    --danger: #e63946;
+    --success: #4caf50;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: var(--primary);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--accent);
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.app-header {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 2px solid var(--accent);
+}
+
+.logo {
+    font-size: 2rem;
+    color: var(--accent);
+}
+
+.category-switcher {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.category-btn, .submenu-btn {
+    padding: 0.5rem 1rem;
+    background: var(--secondary);
+    border: none;
+    color: var(--text);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.category-btn.active, .submenu-btn.active {
+    background: var(--accent);
+    color: var(--primary);
+}
+
+.submenu-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--secondary);
+}
+
+.main-content {
+    padding: 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.entry-section, .consult-section, .stats-section {
+    padding: 1rem;
+}
+
+.entry-form, .consult-form {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.entry-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.entry-form input, .entry-form select, .consult-form input {
+    padding: 0.5rem;
+    width: 120px;
+    background: var(--input-bg);
+    color: var(--text);
+    border: none;
+    border-radius: 5px;
+}
+.entry-form input:focus, .consult-form input:focus {
+    outline: 2px solid var(--accent);
+}
+
+#loadFile {
+    display: none;
+}
+
+.entry-form input[type="number"]::-webkit-inner-spin-button,
+.entry-form input[type="number"]::-webkit-outer-spin-button {
+    opacity: 1;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    background: var(--accent);
+    color: var(--primary);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.entry-feedback {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.entry-feedback ul {
+    list-style: none;
+    padding: 0;
+    font-size: 0.9rem;
+}
+
+.entries-list {
+    max-height: 200px; /* Limiter la hauteur pour éviter une liste trop longue */
+    overflow-y: auto; /* Ajouter un défilement si trop d’entrées */
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background: var(--secondary);
+    border-radius: 5px;
+}
+
+.consult-result {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.consult-result ul {
+    list-style: none;
+    padding: 0;
+    font-size: 0.9rem;
+}
+
+.global-controls {
+    text-align: center;
+    padding: 1rem;
+}
+
+.btn-danger {
+    padding: 0.5rem 1rem;
+    background: var(--danger);
+    color: var(--text);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-danger:hover {
+    opacity: 0.9;
+}
+
+.error {
+    color: var(--danger);
+}
+
+@media (max-width: 600px) {
+    .category-switcher, .submenu-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    .entry-form input, .entry-form select, .consult-form input {
+        width: 100px;
+    }
+}
