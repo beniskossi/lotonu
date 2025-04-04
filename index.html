@@ -22,8 +22,18 @@
         <main class="main-content" id="dynamicContent"></main>
         <div class="global-controls">
             <button class="btn-danger" onclick="app.factoryReset()">Réinitialiser</button>
+            <button class="btn" id="installBtn" style="display: none;">Installer Lotonu</button>
         </div>
     </div>
     <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('Service Worker enregistré', reg))
+                    .catch(err => console.error('Erreur Service Worker', err));
+            });
+        }
+    </script>
 </body>
 </html>
